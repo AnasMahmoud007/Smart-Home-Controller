@@ -79,10 +79,19 @@ The current level of this project is driven by **Python 3**.
 * **Library Dependency:** The core of the serial communication is handled by the **pyserial** library, which allows Python to read/write directly to the system's hardware COM ports.  
 * **Serial Communication:** The script monitors the **COM ports** assigned to the USB-to-TTL adapters and handles incoming data from the Bluetooth serial buffer.
 
-### **📦 Prerequisites**
+### 📦 Prerequisites
 
-To run the Python controller, install the required serial library via pip:  
-`pip install pyserial`
+**1. Software Dependencies**
+To run the Python controller, install the required serial library via pip:
+
+pip install pyserial
+
+2. Hardware Drivers (CP2102)
+This project uses a CP2102 USB-to-TTL adapter to bridge the laptop to the physical circuit. Your computer must have the correct Virtual COM Port (VCP) drivers installed to recognize the device.
+
+Download: Get the official CP210x USB to UART Bridge VCP Drivers directly from Silicon Labs.
+
+Verify: After installation, plug in the module and check your Device Manager (Windows) or System Information (Mac/Linux) to confirm it is recognized and note which COM port it has been assigned.
 
 ### **Commands:**
 
