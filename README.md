@@ -19,11 +19,11 @@ This specific project is a hybrid-voltage control system that utilizes the **Blu
 * **Hardware Interfacing:** Utilization of **USB-to-TTL drivers** (CP210x) to map signals through the laptop's **COM ports**.  
 * **Wireless Control:** Integrated Bluetooth (HC-06) for remote triggering via the **Bluetooth Serial Terminal** mobile app.
 
-## **⚡ System Schematic & Wiring Diagram**
+## **⚡ System Schematic & Wiring BluePrint**
 
 The following diagram illustrates the complete hardware integration. It highlights the use of protection components (Flyback Diode) and torque enhancements (Kick-start Capacitor) within our mixed-voltage architecture.
 
-
+![Con_BluePrint](Con_BluePrint.jpg)
 
 ### **📐 Technical Specifications**
 | Component | Function | Value/Spec | 
