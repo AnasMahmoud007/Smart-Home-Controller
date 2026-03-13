@@ -23,16 +23,31 @@ This specific project is a hybrid-voltage control system that utilizes the **Blu
 
 The following diagram illustrates the complete hardware integration. It highlights the use of protection components (Flyback Diode) and torque enhancements (Kick-start Capacitor) within our mixed-voltage architecture.
 
-![alt text](image-1.png)
+
 
 ### **📐 Technical Specifications**
-
-|  
-| **Component** | **Function** | **Value/Spec** | | **Transistor** | Low-Side Switch (NPN) | 2N2222A | | **Diode** | Flyback Protection (Snubber) | 1N4007 | | **Capacitor** | Speed-up "Kick" (Stiction Fix) | 10µF | | **Logic Source** | USB-to-TTL Bridge | CP2102 (3.3V) | | **Power Source** | Lithium-Ion Battery | 7.4V (2S) | | **Resistors** | Current Limiting | 1kΩ (Base), 330Ω (LED) |
+| Component | Function | Value/Spec | 
+| :--- | :--- | :--- | 
+| **Transistor** | Low-Side Switch (NPN) | 2N2222A | 
+| **Diode** | Flyback Protection (Snubber) | 1N4007 | 
+| **Capacitor** | Speed-up "Kick" (Stiction Fix) | 10µF | 
+| **Logic Source** | USB-to-TTL Bridge | CP2102 (3.3V) | 
+| **Power Source** | Lithium-Ion Battery | 7.4V (2S) | 
+| **Resistors** | Current Limiting | 1kΩ (Base), 330Ω (LED) |
 
 ### **🔌 Official Wiring Table**
 
-| **From Component** | **Pin/Leg** | **To Component** | **Connection Type** | | **CP2102** | DTR | LED (+) | Signal Path (LED) | | **LED (-)** | Cathode | GND Rail | Return Path | | **CP2102** | RTS | 1kΩ Resistor | Control Path (Motor) | | **1kΩ Resistor** | (Output) | Transistor Base | Trigger Signal | | **10µF Cap** | Parallel | Across 1kΩ Resistor | Kick-start Impulse | | **Battery (+)** | 7.4V Rail | Motor (+) | High Power Path | | **Diode (1N4007)** | Stripe | Battery (+) | Protection (Clamp) | | **Motor (-)** | Output | Transistor Collector | Return to Switch | | **Transistor** | Emitter | GND Rail | System Common Ground |
+| From Component | Pin/Leg | To Component | Connection Type |
+| :--- | :--- | :--- | :--- |
+| **CP2102** | DTR | LED (+) | Signal Path (LED) |
+| **LED (-)** | Cathode | GND Rail | Return Path |
+| **CP2102** | RTS | 1kΩ Resistor | Control Path (Motor) |
+| **1kΩ Resistor** | (Output) | Transistor Base | Trigger Signal |
+| **10µF Cap** | Parallel | Across 1kΩ Resistor | Kick-start Impulse |
+| **Battery (+)** | 7.4V Rail | Motor (+) | High Power Path |
+| **Diode (1N4007)** | Stripe | Battery (+) | Protection (Clamp) |
+| **Motor (-)** | Output | Transistor Collector | Return to Switch |
+| **Transistor** | Emitter | GND Rail | System Common Ground |
 
 ## **🔬 Theoretical Concepts Applied**
 
