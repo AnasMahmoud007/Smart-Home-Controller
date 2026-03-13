@@ -23,7 +23,7 @@ This specific project is a hybrid-voltage control system that utilizes the **Blu
 
 The following diagram illustrates the complete hardware integration. It highlights the use of protection components (Flyback Diode) and torque enhancements (Kick-start Capacitor) within our mixed-voltage architecture.
 
-![Con_BluePrint](Con_BluePrint.jpg)
+
 
 ### **📐 Technical Specifications**
 | Component | Function | Value/Spec | 
