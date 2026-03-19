@@ -113,17 +113,8 @@ As the course advances, we will move toward a real full hardware environment and
 
 # **Smart Home Controller Phase 2: Decoupled Control & Wi-Fi Integration**
 <details>
-**Author:** Project 2 Group
 
-**Institution:** Higher Institute of Computer Science and Information Technology – El Shorouk Academy
-
-**Supervisor:** TA. Ahmed Mahfouz
-
-**Environment:** Windows 11, VS Code
-
-**Core Technology:** Python (pyserial, socket), TCP/IP Wi-Fi
-
-## **1\. Phase 2 Abstract**
+## ** Phase 2 Abstract**
 
 This document details the second phase of the VLSI Smart Home Controller Proof of Concept (PoC). Building upon the hardware foundations established in Phase 1, this iteration introduces a massive architectural upgrade: **Network Standardization** via TCP/IP Wi-Fi, and a **Decoupled State-Monitoring** approach for hybrid lighting control.
 
