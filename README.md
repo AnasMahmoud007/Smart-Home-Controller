@@ -1,5 +1,5 @@
-# **VLSI Smart Home Controller \- Level 1 Proof of Concept (PoC)**
-
+ # **VLSI Smart Home Controller Phase 1: Proof of Concept (PoC)**
+<details>
 This repository represents the practical implementation phase of my academic course in **Very Large Scale Integration (VLSI)**. It serves as a Level 1 PoC, bridging the gap between discrete logic control and high-power physical systems.
 
 ## **🎓 Academic Context**
@@ -108,10 +108,11 @@ As the course advances, we will move toward a real full hardware environment and
 * **Flashing Process:** The firmware will be compiled and flashed using **Microchip Studio**.  
 * **Peripherals:** Integration of **Servo Motors**, **LCD Displays**, and **Ultrasonic Sensors**.
 
+</details>
 
 
 # **Smart Home Controller Phase 2: Decoupled Control & Wi-Fi Integration**
-
+<details>
 **Author:** Project 2 Group
 
 **Institution:** Higher Institute of Computer Science and Information Technology – El Shorouk Academy
@@ -194,3 +195,4 @@ LED 1 state:OFF \- last used : (physical button)
 * **Environment:** Windows 11 running Visual Studio Code (VS Code).  
 * **Backend Server:** Python 3 (pyserial for hardware interfacing, socket for Wi-Fi communication).  
 * **Mobile Interface:** **Serial WiFi Terminal** (Android application by Kai Morich). Configured to use a "Raw" protocol connection aimed at the host PC's IPv4 address.
+</details>
