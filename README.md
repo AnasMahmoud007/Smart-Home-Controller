@@ -132,7 +132,7 @@ Additionally, this document outlines the theoretical design for an *upcoming* **
 
 *Figure 1: Complete wiring diagram for Phase 2, illustrating the separation of sensor inputs from logical load outputs.*
 
-![alt text](Phase2-1.png)
+![Phase2](Phase2.png)
 
 ## **2\. Major Architectural Upgrades (Phase 1 vs. Phase 2\)**
 
