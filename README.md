@@ -103,6 +103,8 @@ Verify: After installation, plug in the module and check your Device Manager (Wi
 
 As the course advances, we will move toward a real full hardware environment and more complex sensor integration:
 
+* **communication protocol transition:** begin using other communication protocols(WIFI,ZIGBEE).
+* **Begin using a real MicroController:** starting with Esp32 or maybe Arduino UNO.  
 * **Firmware Transition:** Developing **C code (firmware)** to replace the Python-based laptop control.  
 * **Hardware Transition:** Migration to a dedicated Microcontroller unit, specifically the **ATmega128A**.  
 * **Flashing Process:** The firmware will be compiled and flashed using **Microchip Studio**.  
