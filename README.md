@@ -189,3 +189,93 @@ LED 1 state:OFF \- last used : (physical button)
 * **Backend Server:** Python 3 (pyserial for hardware interfacing, socket for Wi-Fi communication).  
 * **Mobile Interface:** **Serial WiFi Terminal** (Android application by Kai Morich). Configured to use a "Raw" protocol connection aimed at the host PC's IPv4 address.
 </details>
+
+# **Smart Home Controller Phase 3: ESP32 Multi-Protocol OS**
+<details>
+
+## **📖 Overview**
+
+This phase marks the migration from a PC-hosted Python script to a bare-metal embedded Operating System designed for the **ESP32 Microcontroller**. It acts as a centralized Local Area Network (LAN) hub, running a custom state-machine that allows multiple users to simultaneously connect and control physical hardware via **Wi-Fi (TCP/IP)**, **Bluetooth Serial**, and **USB Serial**.
+
+The system features a polymorphic, non-blocking input engine, preventing terminal lockups and ensuring real-time multi-user interaction across 6 distinct built-in applications.
+
+*(Space reserved for Architecture Diagram)*
+
+## **✨ Key Features**
+
+* **Multi-Protocol Concurrency:** Connect up to 4 Wi-Fi users, 1 Bluetooth user, and 1 local USB terminal simultaneously. All users share the same live state.  
+* **Non-Blocking I/O:** Characters are buffered asynchronously, completely ignoring invisible terminal garbage bytes (like ANSI escape codes from PuTTY).  
+* **Hardware Multiplexing:** Complex features (like editing time or triggering strobe lights) are achieved using only two physical buttons via precise Long-Press/Short-Press timing algorithms.  
+* **Non-Volatile Storage (NVS):** Network credentials and custom IP addresses are saved permanently to the ESP32's internal flash memory.  
+* **Hardware Failsafe:** A physical button sequence during boot instantly wipes corrupted memory and restores factory default settings.
+
+## **🛠️ Hardware Requirements & Wiring**
+
+| Component | ESP32 GPIO Pin | Details / Protection |
+| :---- | :---- | :---- |
+| **LED 1 (Relay 1\)** | GPIO 4 | Wired with 220Ω Resistor |
+| **LED 2 (Relay 2\)** | GPIO 5 | Wired with 220Ω Resistor |
+| **Button 1 (Dot/Up)** | GPIO 6 | Active LOW (Internal Pull-Up) |
+| **Button 2 (Dash/Down)** | GPIO 7 | Active LOW (Internal Pull-Up) |
+| **Menu Button (Switch)** | GPIO 9 | Active LOW (Internal Pull-Up) |
+| **DC Motor PWM** | GPIO 10 | Low-side switched via TIP120 (NPN), 1kΩ base resistor, and 1N4007 flyback diode. Powered by external 7.4V battery. |
+| **RGB Smart LED** | GPIO 48 | Built-in WS2812B NeoPixel |
+
+## **🚀 The Operating System Apps**
+
+### **\[1\] Smart Home Controller**
+
+Controls two digital outputs. Features a network-triggered or long-press-triggered **Police Mode** which overrides states to flash the LEDs rapidly. Interrupt-safe.
+
+### **\[2\] Telegraph (1-Button Mode)**
+
+Simulates a classic straight key. Uses a millisecond threshold logic (\<300ms \= Dot, \>300ms \= Dash) to decode taps into characters and broadcasts them live to the network.
+
+### **\[3\] Telegraph (2-Button Mode)**
+
+Simulates an Iambic Paddle. Button 1 types Dots, Button 2 types Dashes. Pauses dictate character and word spacing.
+
+### **\[4\] Motor Speed Controller**
+
+Provides 0-100% PWM speed control. Features a **Software Kickstart Burst** (a 50ms 100% power surge to break static friction before settling into lower speeds).
+
+### **\[5\] Wi-Fi Configurator**
+
+Allows live editing of the ESP32's SoftAP Network Name (SSID), Password, and Gateway IP address via terminal. Commits to NVS and safely reboots the system.
+
+### **\[6\] Network Digital Clock**
+
+A background timing engine that tracks Day, Month, Year, Hour, Minute, and Second. Projects a virtual LCD onto all connected terminal screens. Fully configurable via network commands or hardware button multiplexing.
+
+## **💻 Setup & Installation (PlatformIO)**
+
+This project requires **Visual Studio Code** with the **PlatformIO** extension.
+
+1. Clone this repository.  
+2. Open the folder in VS Code.  
+3. Ensure your platformio.ini includes the required libraries:  
+   \[env:esp32dev\]  
+   platform \= espressif32  
+   board \= esp32dev  
+   framework \= arduino  
+   monitor\_speed \= 115200  
+   lib\_deps \=   
+       adafruit/Adafruit NeoPixel @ ^1.11.0
+
+4. Build and Upload to your ESP32.
+
+## **📡 Connecting to the Hub**
+
+* **Via USB:** Open PlatformIO Serial Monitor (Baud: 115200).  
+* **Via Bluetooth:** Pair your phone with ESP32\_Batmobile\_BT and open a Bluetooth Serial Terminal app.  
+* **Via Wi-Fi:** Connect to the ESP32\_Master\_Node Wi-Fi network (Pass: adminpassword). Open PuTTY or a TCP app and connect to 192.168.4.1 on Port 8080 (Raw/Telnet).
+
+## **⚠️ Factory Reset Rescue**
+
+If you accidentally misconfigure the Wi-Fi (e.g., set an impossible IP address or forget the password):
+
+1. Press the RST (Reset) button on the ESP32.  
+2. Immediately press and hold the **Menu Button (GPIO 9\)** on your breadboard.  
+3. The built-in RGB LED will violently flash **RED** 15 times, indicating the NVS memory has been wiped. The system will reboot with the default ESP32\_Master\_Node credentials.
+</details>
+
