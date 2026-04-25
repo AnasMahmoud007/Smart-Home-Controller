@@ -199,7 +199,7 @@ This phase marks the migration from a PC-hosted Python script to a bare-metal em
 
 The system features a polymorphic, non-blocking input engine, preventing terminal lockups and ensuring real-time multi-user interaction across 6 distinct built-in applications.
 
-*(Space reserved for Architecture Diagram)*
+![Final_Phase](Final_Phase.png)
 
 ## **✨ Key Features**
 
