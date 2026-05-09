@@ -129,7 +129,7 @@ Additionally, this document outlines the theoretical design for an *upcoming* **
 
 *Figure 1: Complete wiring diagram for Phase 2, illustrating the separation of sensor inputs from logical load outputs.*
 
-![Phase2](Phase2.png)
+![Phase2](Using_Laptop+USB_to_TTL_serial_cable/Phase2/Diagrams/Phase2.png)
 
 [Watch the Demo Video](https://drive.google.com/file/d/1XJViRV_D5ZdmrwlmTuBrh0oiaorOsnZq/view?usp=drive_link)
 
