@@ -205,7 +205,7 @@ This phase marks the migration from a PC-hosted Python script to a bare-metal em
 
 The system features a polymorphic, non-blocking input engine, preventing terminal lockups and ensuring real-time multi-user interaction across 6 distinct built-in applications.
 
-![Final_Phase](Final_Phase.png)
+![Final_Phase](ESP32/Diagrams/Final_Phase.png)
 
 [Watch the Demo Video](https://drive.google.com/file/d/1GaulBKjp_sAl0KQnLzoHA-KW1h_qcbnO/view?usp=drive_link)
 
