@@ -131,6 +131,9 @@ Additionally, this document outlines the theoretical design for an *upcoming* **
 
 ![Phase2](Phase2.png)
 
+[Watch the Demo Video](https://drive.google.com/file/d/1XJViRV_D5ZdmrwlmTuBrh0oiaorOsnZq/view?usp=drive_link)
+
+
 ## **2\. Major Architectural Upgrades (Phase 1 vs. Phase 2\)**
 
 ### **2.1 The Network Shift: Bluetooth to Wi-Fi (TCP/IP)**
@@ -203,6 +206,9 @@ This phase marks the migration from a PC-hosted Python script to a bare-metal em
 The system features a polymorphic, non-blocking input engine, preventing terminal lockups and ensuring real-time multi-user interaction across 6 distinct built-in applications.
 
 ![Final_Phase](Final_Phase.png)
+
+[Watch the Demo Video](https://drive.google.com/file/d/1GaulBKjp_sAl0KQnLzoHA-KW1h_qcbnO/view?usp=drive_link)
+
 
 ## **✨ Key Features**
 
