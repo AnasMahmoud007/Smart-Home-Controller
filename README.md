@@ -25,6 +25,9 @@ The following diagram illustrates the complete hardware integration. It highligh
 
 ![Con_BluePrint_v2](Con_BluePrint_v2.jpg)
 
+[Watch the Demo Video](./Using Laptop+USB to TTL serial cable/Phase1/video/Blutooth_Simple_On_Off_Motor_LED.mkv)
+
+
 ### **📐 Technical Specifications**
 | Component | Function | Value/Spec | 
 | :--- | :--- | :--- | 
